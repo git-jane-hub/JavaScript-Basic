@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* Java와 마찬가지로 break 구문은 반복문을 강제로 종료시킬 때 사용
+    break 구문은 무한 루루프로 불리는 while문과 조합하여 쓰이는 경우가 일반적 */
+
+      // while 문 외부에 조건식에 활용할 변수 선언
+      var i = 0;
+      while (true) {
+        document.write("무한 루프");
+        // 조건식 변수값에 변동
+        i++;
+        // 조건식 변수가 조건을 만족시키면
+        if (i > 15) {
+          // 강제 종료
+          break;
+        }
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

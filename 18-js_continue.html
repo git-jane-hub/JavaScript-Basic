@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* continue 문은 만나는 즉시 진행하던 반복만 종료시키고 다음 반복을 실행하는 구문
+    주로 특정 조건을 만족할 때 반복구간을 skip시키는 용도로 사용 */
+
+      // for 문 중 홀수만 출력하는 코드
+      for (var a = 0; a < 10; a++) {
+        // 특정 조건을 만나면 반복구간을 skip
+        if (a % 2 === 0) {
+          continue;
+        }
+        document.write(a + "<br/>");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>
