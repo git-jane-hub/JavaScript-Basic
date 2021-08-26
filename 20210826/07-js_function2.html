@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        position: relative;
+      }
+      a {
+        position: absolute;
+
+        text-decoration: none;
+        z-index: 2;
+        font-weight: bold;
+        font-size: 30px;
+        color: red;
+      }
+      a:first-child {
+        top: 0;
+      }
+    </style>
+    <script>
+      /* JavaScript 내에서 특정 요소를 얻기
+      document.getElementBy~
+      예) id 가 qwer인 요소를 가져오기
+      document.getElementById("qwer");*/
+      // 그림 번호
+      var num = 0;
+      // 함수 작성 시 리턴 자료형을 작성하지 않음(동적 언어 타입의 특성)
+      function nextPic() {
+        // 다음 번호의 그림으로 이동
+        num++;
+        if (num > 2) {
+          num = 0;
+        }
+        console.log(document.getElementById("pic"));
+        // 태그 내부의 속성을 id를 이용해서 변경
+        // width 속성을 변경
+        // document.getElementById("pic").width = "100";
+        // id 가 pic인 요소의 src 속성을 1 증가된 num 을 이용해 바꿔줌
+        document.getElementById("pic").src = "images/img" + num + ".PNG";
+        // 위의 로직으로 그림이 변경되고 링크 이동을 막기위해 사용(링크로 이동하는 a태그의 기능을 없애줌)
+        return false;
+      }
+      function prevPic() {
+        num--;
+        if (num < 0) {
+          num = 2;
+        }
+        document.getElementById("pic").src = "images/img" + num + ".PNG";
+        return false;
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>next image</h1>
+    <a href="#" onclick="return prevPic()"><</a>
+    <img width="200px" src="images/img0.PNG" id="pic" />
+    <a href="#" onclick="return nextPic()">></a>
+  </body>
+</html>

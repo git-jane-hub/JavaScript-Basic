@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* JavaScript 도 Java 처럼 new 키워드를 이용해 클래스를 만들고
+    클래스의 객체를 생성해서 사용
+    JS에서의 클래스의 목적도 변수와 함수를 담아 사용하기 위함이며 Java의 java.util.* 과 같이
+    미리 만들어져있는 내장 클래스를 사용 가능 */
+
+      /* 내장 클래스의 대표적인 예로는 document 가 있으며 
+    그 외에도 Date, Array, Math 등 Java와 유사한 여러종류의 객체가 있음 */
+
+      // 날짜 관련 객체 Date
+      document.write("<h1>현재날짜/시간정보</h1>");
+      // 날짜 정보를 얻기위해 생성
+      var today = new Date();
+      // 연도
+      var nowYear = today.getFullYear();
+      // 월(0 ~ 11)
+      var nowMonth = today.getMonth() + 1;
+      // 일
+      var nowDate = today.getDate();
+      // 요일(0-일, 6-토)
+      var nowDay = today.getDay();
+      // 현재 시간
+      var nowHours = today.getHours();
+      // 현재 분
+      var nowMinutes = today.getMinutes();
+      // 현재 초
+      var nowSeconds = today.getSeconds();
+      // 유닉스 시간
+      var nowTime = today.getTime();
+
+      // 변수에 초기화한 객체들을 출력
+      document.write(nowYear + "년" + "<br>");
+      document.write(nowMonth + "월" + "<br>");
+      document.write(nowDate + "일" + "<br>");
+      document.write(nowDay + "요일" + "<br>");
+      document.write(nowHours + "시" + "<br>");
+      document.write(nowMinutes + "분" + "<br>");
+      document.write(nowSeconds + "초" + "<br>");
+      document.write(nowTime + "(유닉스 시간)" + "<br>");
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* String 객체를 사용해 JavaScript 에서 문자열 다루기 */
+      // 일반적인 생성
+      var str1 = new String("JavaScript");
+      // 간소화된 생성
+      var str2 = "JavaScript";
+
+      var text = "JavaScript is good";
+      // bold
+      document.write(text.bold() + "<br>");
+      // link
+      document.write(text.link("http://naver.com") + "<br>");
+      // 문자 길이(공백 포함)
+      document.write(text.length + "<br>");
+      // 소문자로
+      document.write(text.toLocaleLowerCase() + "<br>");
+      // 대문자로
+      document.write(text.toLocaleUpperCase() + "<br>");
+      // 아래 indexOf에 관련된 객체 두개는 같은 문자가 여러개 있을 때, 앞이나 뒤에서부터 가장 가까운 문자를 찾아줌
+      // 해당 문자 인덱스
+      document.write(text.indexOf("i") + "<br>");
+      // 뒤에서부터
+      document.write(text.lastIndexOf("i") + "<br>");
+      // 5번 문자
+      document.write(text.charAt(5) + "<br>");
+      // 범위지정
+      document.write(text.substring(4, 6) + "<br>");
+      // 10번부터 3글자(공백도 출력)
+      document.write(text.substr(10, 3) + "<br>");
+      // 찾아서 바꾸기
+      document.write(text.replace("good", "great") + "<br>");
+      // 문장뒤에 ... 추가
+      document.write(text.concat("...") + "<br>");
+      // " " 기준으로 나누기(괄호내부에 있는 것을 ,(콤마)로 변경해서 나눠줌)
+      document.write(text.split(" ") + "<br>");
+      document.write(text.split("i") + "<br>");
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>
