@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* JavaScript 에서는 다양한 방식으로 이벤트 통제 가능 
+    *onload - 문서가 모두 로드되면 이벤트 발생
+    onunload - 문서 종료시 이벤트 발생
+    ondbclick - 해당 요소를 더블 클릭시 발생
+    *onclick - 해당 요소를 한 번 클릭시 발생
+    onkeypress - 해당 키를 누르면 발생
+    onkeydown - 해당 키가 눌려졌을 때 발생
+    onkeyup - 해당 키를 누른 상태에서 뗄 때 발생
+    onmouseover - 마우스 커서가 대상에 올려지면 발생
+    onfocus - (tap 키 등으로)해당 요소를 타겟으로 잡을 때 발생
+    onmouseout - 대상에서 마우스 커서가 벗어나면 발생
+    onblur - onfocus 상태에서 벗어나면 발생
+    *onsubmit - 전송 버튼을 누르면 발생
+    onreset - 취소버튼을 눌렀을 때 발생
+    *onchange - 입력요소 값이 변경되면 발생 
+    onmousemove - 머우스가 움직일 때마다 발생 
+    onresize - 브라우저 창 크기가 조절될 때 발생
+    onerror - 문서 이미지를 불러오는 도중 에러발생 시 발생
+    onabort - 문서 이미지를 불러오는 도중 중단되면 발생 
+    */
+
+      // 코드 로딩 전 요소를 받아오려다 null 이 출력
+      // var h1Tag = document.getElementsByClassName("noData");
+      // console.log(h1Tag);
+
+      // 코드 로딩 후 데이터를 받아오도록 처리(window.onload: 브라우저의 모든 로딩이 끝나면)
+      window.onload = function () {
+        /*
+        window.onload = 함수(){
+            내부실행문; 은 무조건 문서 로딩 후에 실행됨
+        }
+        */
+        var h1Tag = document.getElementsByClassName("noData");
+        console.log(h1Tag);
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <!-- 페이지 로드 후에 인식 -->
+    <h1 class="noData">test</h1>
+  </body>
+</html>

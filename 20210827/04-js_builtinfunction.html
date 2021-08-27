@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* JavaScript는 사용자의 편의를 위해 기본적인 기능을 내장함수로 제공함
+    eval() - 문자열을 JavaScript 코드로 변환
+    parseInt() - 숫자를 정수로 변환
+    parseFloat() - 숫자를 실수로 변환
+    isNaN() - Not a Number, 숫자로 판단이 되지 않는 수치데이터를 감별해 맞으면 true로 리턴
+    isFinite() - 주어진 값이 유리수인지 여부 판단
+    Number() - 문자를 숫자형으로 변환
+    String() - 숫자를 문자형으로 변환
+    escape() - 문자를 16진수 아스키코드로 변환
+    unescape() - escape()으로 변환된 코드를 문자로 변환
+     */
+      var result1 = eval("10 + 20"); // eval이 작성되면 괄호와 따옴표를 전부 없애는 것 같은 효과를 냄
+      document.write(result1 + "<br>");
+
+      var num = 100;
+      document.write("num" + 10 + "<br>");
+
+      document.write(eval("num") + 10 + "<br>"); // 문자 num을 eval()이 코드로 변환해 변수 num처럼 사용
+
+      var infiniteValue = 1 / 0; // 무한대 값
+      var result3 = isFinite(infiniteValue); // 에러를 발생하지 않음 (주의)
+      document.write(infiniteValue + "<br>");
+      document.write(result3 + "<br>");
+
+      var result2 = isNaN(1 / "가"); // 나누기 연산을 진행하지만 숫자가 아님
+      document.write(1 / "가" + "<br>");
+      document.write(result2 + "<br>");
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

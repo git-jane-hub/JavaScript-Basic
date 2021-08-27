@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* 태그에 이벤트를 거는 방식은 작동을 하지만 두 개이상의 이벤트를 작성할 때는 하나씩만 작동함
+    따라서, 하나의 태그에 두 개 이상의 이벤트를 동시에 작동하게 하기 위해서는 기존의 onclick 추가 방식이 아닌 다른 방식으로 해야함
+    DOM LEVEL 0 이라고 함 */
+      function theFnc() {
+        alert("경고문구");
+      }
+
+      window.onload = function () {
+        var myBtn = document.getElementById("btn1");
+        myBtn.onclick = theFnc; //btn1에 theFnc 연결
+      };
+
+      window.onload = function () {
+        var myBtn = document.getElementById("btn2");
+        myBtn.onclick = theFnc; //btn2에 theFnc 연결
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <button id="btn1">button1</button>
+    <button id="btn2">button2</button>
+  </body>
+</html>
