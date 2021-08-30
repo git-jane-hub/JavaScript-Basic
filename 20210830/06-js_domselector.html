@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* 원거리 선택자
+        태그에 지정한 id를 이용해 특정 태그만 선택할 수 있는 선택자
+        선택대상.getElementById("ID명");
+        */
+      // 문서 로딩이 끝난 다음 호출할 수 있도록 window.onload 내부에 작성
+      window.onload = function () {
+        var myObj = document.getElementById("title");
+        console.log(myObj);
+        myObj.style.color = "blue";
+        console.log(myObj);
+        /* 특정 태그를 가져오기
+            선택대상.getElementsByTagName("태그명");*/
+        // 1. ul 요소들 전체 선택
+        var myList = document.getElementsByTagName("ul");
+        console.log(myList[0]);
+        // 2. ul > li 요소들 선택(body 태그내부에 li태그가 여러개있는데, 어떤 ul태그를 지정하는지 먼저 선택하고 그 하위의 li를 조회 - 범위를 좁힘)
+        var myLi = myList[0].getElementsByTagName("li");
+        console.log(myLi);
+        myLi[0].style.border = "1px solid royalblue";
+        myLi[1].style.border = "2px dotted thistle";
+
+        var urLi = myList[1].getElementsByTagName("li");
+        console.log(urLi);
+        for (var a = 0; a < urLi.length; a++) {
+          if (a % 2 === 1) {
+            urLi[a].style.border = "2px solid yellowgreen";
+          } else {
+            urLi[a].style.border = "3px dotted gold";
+          }
+        }
+
+        var title = document.getElementsByTagName("h1");
+        title.onclick = "location.href='http://naver.com'";
+        console.log(title);
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <h1>선택자</h1>
+      <h2 id="title">원거리 선택자</h2>
+      <ul>
+        <li>getElementById</li>
+        <li>getElementByTagName</li>
+      </ul>
+      <h2>근거리 선택자</h2>
+      <ul id="list">
+        <li>parentNode</li>
+        <li>childNodes</li>
+        <li>children</li>
+        <li>firstChild</li>
+        <li>previousSibling</li>
+        <li>nextSibling</li>
+      </ul>
+    </div>
+  </body>
+</html>
