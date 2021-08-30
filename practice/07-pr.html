@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      function computer(cpu, ram, ssd) {
+        this.cpu = cpu;
+        this.ram = ram;
+        this.ssd = ssd;
+
+        this.tot = function () {
+          document.write("제조업체: AMD<br>시스템: 64bit<br>");
+        };
+      }
+
+      var myCom = new computer("AMD", "32GB", "1TB");
+      document.write(
+        myCom.cpu + "<br>" + myCom.ram + "<br>" + myCom.ssd + "<br>"
+      );
+
+      var myCom2 = new computer("apple", "64GB", "1TB");
+      alert(myCom2.cpu);
+      alert(myCom2.ram);
+      alert(myCom2.ssd);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>
