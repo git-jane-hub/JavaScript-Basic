@@ -18,7 +18,8 @@
         // 1. ul 요소들 전체 선택
         var myList = document.getElementsByTagName("ul");
         console.log(myList[0]);
-        // 2. ul > li 요소들 선택(body 태그내부에 li태그가 여러개있는데, 어떤 ul태그를 지정하는지 먼저 선택하고 그 하위의 li를 조회 - 범위를 좁힘)
+        /* 2. ul > li 요소들 선택(body 태그내부에 li태그가 여러개있는데, 
+        어떤 ul태그를 지정하는지 먼저 선택하고 그 하위의 li를 조회 - 범위를 좁힘)*/
         var myLi = myList[0].getElementsByTagName("li");
         console.log(myLi);
         myLi[0].style.border = "1px solid royalblue";

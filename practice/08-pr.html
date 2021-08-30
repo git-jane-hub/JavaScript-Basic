@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      var check = confirm("확인하셨습니까?");
+      if (check === true) {
+        document.write("check: 확인완료<br>");
+      } else {
+        document.write("check: 미확인<br>");
+      }
+      var answer = check
+        ? "comment: 확인되었습니다."
+        : "comment: 확인하지 못했습니다.";
+      document.write(answer);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

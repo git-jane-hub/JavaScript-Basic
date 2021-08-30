@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      // 코드가 위에서 아래로 실행되기 때문에, body 태그 내부의 id를 받아오려면 window.onload 내부에 작성해야함
+      window.onload = function () {
+        var move = document.getElementById("move");
+        move.href = "http://www.google.com";
+        move.innerHTML = "go google";
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <a id="move" href="http://naver.com">go naver</a>
+  </body>
+</html>

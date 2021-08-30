@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 이거 질문 -->
+    <style></style>
+    <script>
+      window.onload = function () {
+        var first = document.getElementsByTagName("div");
+        var second = document.getElementById("second");
+        var third = document.getElementsByClassName("third");
+        var fourth = document.getElementsByName("fourth");
+        console.log("--");
+        console.log(first);
+        console.log(first[0]);
+        console.log(first[1]);
+        console.log("--");
+        console.log(second);
+        console.log("--");
+        console.log(third);
+        console.log("--");
+        console.log(fourth);
+        console.log("--");
+        var fifth = document.getElementById("fifth");
+        console.log(fifth);
+        fifth.href = "http://google.com";
+        fifth.innerHTML = "go google";
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h2>1</h2>
+    <!-- p태그 내부에는 ul 태그를 작성하면 안됨 -->
+    <p>
+      <ul>
+        <!-- ul의 lastchild:text, lastElementChild: li -->
+        <li>first1</li>
+        <li>first2</li>
+      </ul>
+    </p>
+    <h2>2</h2>
+    <div id="second">
+      <a href="#">second</a>
+    </div>
+    <h2>3</h2>
+    <div class="third">
+      <span>third1</span>
+      <span>third2</span>
+    </div>
+    <h2>4</h2>
+    <div>
+      <input type="button" name="fourth" value="fourth1" />
+      <input type="button" name="fourth" value="fourth2" />
+    </div>
+    <h2>5</h2>
+    <a id="fifth" href="http://www.naver.com">go naver</a>
+  </body>
+</html>
