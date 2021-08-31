@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* DOM 내부 요소를 수정
+          DOM 조작과 onclick 이벤트를 같이 조합해서 사용자가 특정 요소를 클릭했을때 DOM 조작이 일어나도록하는 것이 일반적
+          DOM 조작: html코드에 변화를 주는 것 */
+      window.onload = function () {
+        var number = document.getElementById("number");
+        var incBtn = document.getElementById("increase");
+        var decBtn = document.getElementById("decrease");
+
+        console.log(number);
+        // 특정 태그의 부모요소는 parentNode를 통해 반환 가능
+        console.log(incBtn.parentNode.parentNode);
+        console.log(decBtn.parentNode.parentNode);
+
+        // div 태그를 변수에 저장하는 방법
+        var divTag1 = incBtn.parentNode;
+        var divTag2 = decBtn.parentNode;
+        var divTag3 = number.nextElementSibling;
+
+        // getElementsByName 은 복수개의 태그를 리스트로 얻어오기 때문에 인덱스를 지정해줘야함
+        var divTag4 = document.getElementsByTagName("div")[0];
+        console.log(divTag1);
+        console.log(divTag2);
+        console.log(divTag3);
+        console.log(divTag4);
+
+        // div의 자식 - 리스트[0]은 text(개행, \n), 내용 - #text - data
+        console.log(divTag4.childNodes);
+        // text를 생략하고 태그만 얻어오기
+        console.log(divTag4.children);
+
+        // div의 자식 태그
+        console.log(divTag4.firstChild); // text
+        console.log(divTag4.firstElementChild); // tag
+        console.log(divTag4.lastElementChild);
+
+        // 형제 태그를 가져옴 - 하나의 버튼을 이용해 다른 버튼의 태그를 가져오기
+        console.log(decBtn.previousElementSibling);
+        console.log(incBtn.nextElementSibling);
+        var resetBtn = document.getElementById("reset");
+        console.log(resetBtn.previousElementSibling);
+        console.log(resetBtn.nextElementSibling);
+
+        // 이벤트 생성
+        var numBtn = document.getElementById("number");
+        var resBtn = document.getElementById("reset");
+        var incBtn = document.getElementById("increase");
+        var decBtn = document.getElementById("decrease");
+
+        function cur() {
+          current = parseInt(numBtn.innerText);
+          return current;
+        }
+        // innerText 는 태그 사이의 text만 얻어오고, 갱신도 가능
+        incBtn.onclick = function () {
+          // numBtn 태그 내부 String 숫자를 가져와 정수로 변경
+          current = parseInt(numBtn.innerText);
+          // current = parseInt(numBtn.innerText, 10);
+          // 태그 내부 숫자에 1을 더해 갱신
+          numBtn.innerText = current + 1;
+        };
+        decBtn.onclick = function () {
+          numBtn.innerHTML = cur() - 1;
+        };
+        resBtn.onclick = function () {
+          numBtn.innerHTML = 0;
+        };
+
+        var redBtn = document.getElementById("red");
+        var blueBtn = document.getElementById("blue");
+        var blackBtn = document.getElementById("black");
+
+        redBtn.onclick = function () {
+          numBtn.style.color = "tomato";
+        };
+        blueBtn.onclick = function () {
+          numBtn.style.color = "royalblue";
+        };
+        blackBtn.onclick = function () {
+          numBtn.style.color = "inherit";
+        };
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h2 id="number">0</h2>
+    <div>
+      <button id="increase">+1</button>
+      <button id="reset">0</button>
+      <button id="decrease">-1</button><br />
+      <button id="red">빨간색</button>
+      <button id="blue">파란색</button>
+      <button id="black">검은색</button>
+    </div>
+  </body>
+</html>

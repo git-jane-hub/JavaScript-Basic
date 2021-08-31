@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* body 내부에 element 삽입
+    1. createElement 를 이용해 가상 요소를 만듦
+    2. 가상 요소의 내용물이 필요하다면 채워줌
+    3. DOM 요소에 appendChild를 이용해 삽입 */
+      window.onload = function () {
+        // DOM 요소 생성
+        var newPTag = document.createElement("p");
+        console.log(newPTag);
+        var newBtn1 = document.createElement("button");
+        var newBtn2 = document.createElement("button");
+        console.log(newBtn1);
+        console.log(newBtn2);
+        /*
+        // p태그 내부에 button태그 넣기
+        newBtn1.innerHTML = "button 1";
+        newBtn2.innerHTML = "button 2";
+        */
+        var text1 = document.createTextNode("버튼1");
+        var text2 = document.createTextNode("버튼2");
+        // 속성 생성 (id, class 등을 부여): 요소명.setAttribute("속성명", "부여할 값");
+        newBtn1.setAttribute("id", "btn1");
+        newBtn2.setAttribute("id", "btn2");
+
+        // 문서 조립
+        // : 버튼1, 2의 자식으로 text1, 2를 넣어주고
+        newBtn1.appendChild(text1);
+        newBtn2.appendChild(text2);
+        // : p태그의 자식으로 버튼1, 2를 넣어
+        newPTag.appendChild(newBtn1);
+        newPTag.appendChild(newBtn2);
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="theBox"><h1>요소 생성 연습</h1></div>
+  </body>
+</html>
