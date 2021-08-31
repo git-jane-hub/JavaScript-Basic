@@ -8,7 +8,7 @@
     2. 가상 요소의 내용물이 필요하다면 채워줌
     3. DOM 요소에 appendChild를 이용해 삽입 */
       window.onload = function () {
-        // DOM 요소 생성
+        // DOM 요소 생성 - 메모리에만 저장되는 태그
         var newPTag = document.createElement("p");
         console.log(newPTag);
         var newBtn1 = document.createElement("button");
@@ -27,12 +27,16 @@
         newBtn2.setAttribute("id", "btn2");
 
         // 문서 조립
-        // : 버튼1, 2의 자식으로 text1, 2를 넣어주고
+        // : 버튼1, 2의 자식으로 text1, 2를 넣어줌: 태그.appendChild(태그 사이에 넣을 요소);
         newBtn1.appendChild(text1);
         newBtn2.appendChild(text2);
-        // : p태그의 자식으로 버튼1, 2를 넣어
+        // : p태그의 자식으로 버튼1, 2를 넣어줌
         newPTag.appendChild(newBtn1);
         newPTag.appendChild(newBtn2);
+
+        var bodyTag = document.getElementsByTagName("body")[0];
+        bodyTag.appendChild(newPTag);
+        console.log(bodyTag);
       };
     </script>
     <meta charset="UTF-8" />

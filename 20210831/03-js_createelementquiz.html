@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* #h1space 내부의  #createh1를 클릭할 때마다 h1 태그가 생성되는 로직 작성  */
+      window.onload = function () {
+        var h1Space = document.getElementById("h1space");
+        var createH1 = document.getElementById("createh1");
+
+        createH1.onclick = function () {
+          var h1Tag = document.createElement("h1");
+          h1Tag.innerHTML = "I am h1 tag";
+          h1Space.appendChild(h1Tag);
+        };
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <button id="createh1">h1생성</button>
+    <div id="h1space"></div>
+  </body>
+</html>

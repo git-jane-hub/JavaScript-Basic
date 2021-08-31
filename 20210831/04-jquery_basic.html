@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      /* jquery는 자바스크립트를 활용한 DOM 조작이 편하도록 함
+    부트스트랩처럼 CDN형식이나 혹은 jquery.js파일을 import 해야함 
+    일부 bootstrap 기능도 jquery가 같이 사용되어야 하지만
+    속도가 느려 초대형 서비스에서는 사용하지 않는 추세 */
+      /*
+        1. jquery 구글링
+        2. 메인페이지 - 다운로드
+        3. other CDNs - google CDN - 3.x snippet 복사 
+        4. 사용
+        window.onload = function(){} 대체
+    */
+      // $(document).ready(function(){});
+      $(function () {
+        // $()를 이용해 요소를 얻어옴 (document.getElementBy~ 와 같은 역할)
+        $("*").css("font-size", "13px"); // 전체 선택자
+        $("h1").css("color", "tomato"); // 태그 선택자
+        $("#firstTitle").css("color", "yellowgreen"); // id 선택자
+        $(".nextTitle").css("color", "royalblue"); // class 선택자
+        $(".obj3>li").css("font-weight", "bold"); // 자식 선택자
+        $(".obj3").children(".theObj1").css("color", "thistle");
+
+        $(".obj5").parent().css("border", "2px dotted black");
+        //      $(".obj5").parent("ul").css("border", "2px dotted black");
+        $("#wrap h3").css("font-size", "20px").css("background-color", "gold");
+        $(".obj4").next().css("color", "orange");
+        //      $(".obj4").next("li").css("color", "orange");
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>jQuery</h1>
+      <h2 id="firstTitle">선택자</h2>
+      <h3 class="nextTitle">부모 요소 선택자</h3>
+      <p class="obj1">
+        현재 id가 "obj1"인 요소를 기준으로, 부모 요소는 'div'요소
+      </p>
+    </div>
+    <h3>자식 요소 선택자</h3>
+    <ul class="obj3">
+      <li>list1</li>
+      <li class="theObj1">list2</li>
+      <li>list3</li>
+    </ul>
+    <h3>형 요소 선택자</h3>
+    <ul>
+      <li>list4</li>
+      <li class="obj4">list5</li>
+      <li>list6</li>
+    </ul>
+    <h3>동생 요소 선택자</h3>
+    <ul>
+      <li>list7</li>
+      <li class="obj5">list8</li>
+      <li>list9</li>
+    </ul>
+    <h3>형제 요소들 선택자</h3>
+    <ul>
+      <li>list10</li>
+      <li class="obj6">list11</li>
+      <li>list12</li>
+    </ul>
+    <h3>입력 요소 선택자</h3>
+    <p>
+      <label for="user_name">이름</label
+      ><input type="text" name="user_name" id="user_name" />
+    </p>
+  </body>
+</html>
