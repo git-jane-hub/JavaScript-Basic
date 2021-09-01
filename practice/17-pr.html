@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(() => {
+        // .html() 로 elemet와 text 생성
+        $("#wrap").html("<h1>Big Title</h1>");
+        $("h1").attr("id", "lgTitle");
+
+        $("#wrap").append("<h3>Small Title</h3>");
+        $("h3").attr("class", "smTitle");
+
+        $("#wrap").append("<ul></ul>");
+        $("ul").attr("id", "uList2");
+
+        $("#uList2").html("<li>list1</li>");
+        $("#uList2").prepend($("li").clone());
+        $("#uList2").append($("li").clone());
+        $("li:last").remove();
+        $("li:first").attr("class", "list1");
+        $("li:eq(1)").text("list2");
+        $("li:eq(2)").text("list3");
+
+        // clone()으로 복사한 요소는 :first와 :last에 인식이 안되는 것 같음
+        $("#wrap").append($("#uList2").clone());
+        console.log($("#uList2:first"));
+        console.log($("#uList2:last"));
+        $("#uList2:last").attr("id", "uList1");
+
+        $("#uList2 li:first").removeClass("list1");
+        $("#uList2 li:eq(1)").attr("class", "list2");
+
+        $("#uList2 li:first").text("list4");
+        $("#uList2 li:eq(1)").text("list5");
+        $("#uList2 li:eq(2)").text("list5");
+
+        $("<button>button1</button>").appendTo(".smTitle");
+        $("<button>button2</button>").appendTo(".smTitle");
+        $("button:first").attr("class", "btn1");
+        $("button:last").attr("class", "btn2");
+        $(".smTitle").css("display", "flex").css("flex-direction", "column");
+
+        $(".btn1").click(function () {
+          $(".btn1").css({
+            backgroundColor: "thistle",
+            color: "royalblue",
+            fontWeight: "800",
+          });
+        });
+
+        $(".btn2").click(function () {
+          $(".btn2").css({
+            backgroundColor: "royalblue",
+            color: "thistle",
+            fontWeight: "900",
+          });
+        });
+
+        $(".btn1").hover(
+          function () {
+            $("#uList1").css("display", "block");
+          },
+          function () {
+            $("#uList1").css("display", "none");
+          }
+        );
+        $(".btn2").hover(
+          function () {
+            $("#uList2").css("display", "block");
+          },
+          function () {
+            $("#uList2").css("display", "none");
+          }
+        );
+        console.log($("#wrap"));
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--
+      <h1 id="lgTitle">Big Title</h1>
+      <h3 class="smTitle">Small Title</h3>
+      <button class="btn1">button1</button>
+      <button class="btn2">button2</button>
+      <ul id="uList1">
+        <li class="list1">list1</li>
+        <li>list2</li>
+        <li>list3</li>
+      </ul>
+      <ul id="uList2">
+        <li>list1</li>
+        <li class="list2">list2</li>
+        <li>list3</li>
+      </ul>
+      -->
+    </div>
+  </body>
+</html>

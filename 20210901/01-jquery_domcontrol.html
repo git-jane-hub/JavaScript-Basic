@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      /* 탐색 선택자를 이용해 좀 더 정교한 element 선택이 가능
+        $("ul li:add") - ul 태그 내부의 li 중 홀수번째(인덱스)만 선택
+        $("ul li:even") - ul 태그 내부의 li 중 짝수번째(인덱스)만 선택
+        $("ul li:first") - ul 태그 내부의 li 중 첫번째만 선택
+        $("ul li:last") - ul 태그 내부의 li 중 마지막만 선택
+        $("ul li:eq(1)")
+        $("ul li").eq(1)
+        - ul 태그 내부의 li 중 1번 인덱스만 선택
+        $("ul li:lt(2)") - ul 태그 내부의 li 중 2번 인덱스를 제외한 이전(less than)요소 선택
+        $("ul li:gt(2)") - ul 태그 내부의 li 중 2번 인덱스를 제외한 이후(greater than)요소 선택
+        $("ul li:nth-child(2n)") - ul 태그 내부의 li 중 2의 배수 번째만 선택
+        $("ul li:contains('문자')") - ul 태그 내부의 li 중 특정문자가 포함된 것만 선택
+        $("ul li:has('span')") - ul 태그 내부의 li 중 span태그만 선택
+        $("ul li").filter(".클래스명") - ul 태그 내부의 li 중 해당 클래스명만 선택
+        $("ul li").find("a") - ul 태그 내부의 li 중 속한 a태그만 선택
+        $("ul li:.visible") - ul 태그 내부의 li 중 보이는 것만 선택
+        $("ul li:.hidden") - ul 태그 내부의 li 중 숨겨진 것만 선택
+        $("h1, h2") - h1 과 h2 를 선택
+        $("ul li").not(:empty) - ul 태그 내부의 li 중 비어있지 않은 것만 선택
+       */
+      $(function () {
+        // id = "list1" 요소 li
+        $("#list1 li:even").css("background-color", "gold");
+        $("#list1 li:odd").css("background-color", "lightgrey");
+        $("#list1 li:first").css("color", "tomato");
+        $("#list1 li:last").css("color", "yellowgreen");
+        $("#list1 li:eq(1)").css("font-style", "italic");
+        //      $("#list1 li:nth-child(2)").css("font-style", "italic");
+        $("#list1 li:lt(2)").css("border", "2px dotted aqua");
+        $("#list1 li:gt(2)").css("border", "3px dashed thistle");
+
+        // id = "list2" 요소 li
+        $("#list2 li:nth-child(2n)").css("background-color", "orange");
+        $("#list2 li:contains('list11')").css({
+          color: "royalblue",
+          fontWeight: "900",
+        });
+        $("#list2 li:has('span')").css("color", "palegreen");
+        $("#list2 li").filter(".theObj").css("font-size", "20px");
+        /*$("#list2 li").find("a").css("background-color", "tomato");*/ // a태그만
+        $("#list2 li:has('a')").css("background-color", "tomato"); // a태그를 포함한 li만
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>탐색 선택자 및 HTML 조작</h1>
+      <h2>탐색 선택자</h2>
+      <ul id="list1">
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+        <li>list5</li>
+        <li>list6</li>
+        <li>list7</li>
+      </ul>
+      <ul id="list2">
+        <li>list8</li>
+        <li class="theObj">list9</li>
+        <li><span>list10</span></li>
+        <li>list11</li>
+        <li><a href="#">list12</a></li>
+        <li>list13</li>
+        <li>list14</li>
+      </ul>
+      <h2 class="theTitle">HTML 조작</h2>
+      <ul id="list3">
+        <li class="obj1">list_1</li>
+        <li>list_2</li>
+        <li>list_3</li>
+        <li>list_4</li>
+        <li>list_5</li>
+      </ul>
+    </div>
+  </body>
+</html>

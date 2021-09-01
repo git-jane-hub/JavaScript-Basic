@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      /*
+      문서 객체 조작 메서드 - element 내용을 변경, 생성, 삽입하는 과정을 수행
+      종류
+          $("선택자").html() - 선택요소의 하위요소 얻어오기
+          $("선택자").html("삽입할 요소") - 선택요소 하위요소 변경
+          $("선택자").text("텍스트") - 선택요소 내부텍스트 변경
+          $("새요소") - createElement처럼 새 태그 생성
+          $("선택자").append("새요소") - 선택요소의 마지막에 새요소 삽입
+          $("선택자").prepend("새요소") - 선택요소의 처음에 새요소 삽입
+          $("새요소").appendTo("새요소") - 선택요소에 새요소 삽입
+          $("새요소").prependTo("새요소") - 선택요소에 새요소 삽입
+          $("새요소").insertBefore("위치") - 선택요소에 형제요소 추가
+          $("새요소").insertAfter("위치") - 선택요소에 형제요소 추가
+          $("선택자").clone(true/false) - 요소 복사(하위요소 복사여부)
+          $("선택자").remove() - 선택요소 삭제
+          $("선택자").empty() - 하위요소 전부 삭제
+          $("선택자").attr("속성") - 특정 속성(class, id 등) 지정
+          $("선택자").attr("속성", "값") - 특정 속성(class, id 등) 값 갱신
+          $("선택자").addClass("클래스명") - 새로운 클래스명 부여
+          $("선택자").removeClass("클래스명") - 클래스 속성 해제
+          $("선택자").toggleClass("클래스명") - 클래스명 없으면 추가, 있으면 삭제
+          $("선택자").hasClass("클래스명") - 선택요소에 클래스속성 있으면 true
+          $("선택요소").wrap("<div></div>") - 선택요소를 감싸는 div 생성
+          $("선택요소").wrapAll("<div></div>")  - 선택요소 전체를 감싸는 div 생성
+      */
+      // class = "theTitle" 내부 요소 변경
+      // $(function(){}); 는 익명함수 일 때 $(()=>{}); 로 대체하여 작성가능(ES6 문법)
+      $(() => {
+        $(".theTitle").html("<a href='#'>요소 객체 조작</a>");
+        $(".obj1").text("list_2");
+
+        $("#list3").append("<li>list_6</li>");
+        $("#list3").prepend("<li>list_1</li>");
+
+        // console에 출력 console.log($("출력할 내용"));
+        // ul#list3 에 children 요소 확인
+        console.log($("#list3"));
+        // 생성할 element 먼저 작성
+        $("<li>insertBefore</li>").insertBefore("#list3 li:eq(4)");
+        //  $("<li>insertBefore</li>").insertBefore($("#list3 li").eq(4));
+        $("<li>insertAfter</li>").insertAfter("#list3 li:eq(5)");
+
+        var dupObj1 = $(".obj1").clone(true);
+        $("#list3").append(dupObj1);
+        /*
+        var dupObj1 = $(".obj1").clone();
+        dupObj1.appendTo("#list3");
+        */
+
+        console.log($("#list3 li:nth-child(2)").attr("class"));
+        console.log($("#list3 li:eq(1)").attr("class"));
+        console.log($("#list3 li").eq(1).attr("class"));
+
+        $("#list3 li:eq(1)").attr("class", "obj2");
+        $(".obj2").css("background-color", "gold");
+
+        $("#list3 li:eq(0)").addClass("obj3");
+        $(".obj3").css("color", "tomato");
+        /*
+        도트 단위마다 디버깅을 통해 리턴하는 값을 확인해보고 값이 있으면 method chaining을 통해 연결 가능
+        $("#list3 li:eq(0)").addClass("obj3").css("color", "tomato");
+        */
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="wrap">
+      <h2 class="theTitle">HTML 조작</h2>
+      <ul id="list3">
+        <li class="obj1">list_1</li>
+        <li>list_3</li>
+        <li>list_4</li>
+        <li>list_5</li>
+      </ul>
+    </div>
+  </body>
+</html>
