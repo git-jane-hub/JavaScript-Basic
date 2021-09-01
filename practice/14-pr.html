@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      window.onload = function () {
+        var bodyTag = document.getElementsByTagName("body")[0];
+        var num = document.getElementById("num");
+        var incBtn = document.getElementById("incBtn");
+        var resBtn = document.getElementById("resBtn");
+        var decBtn = document.getElementById("decBtn");
+
+        function numZero() {
+          var number = parseInt(num.innerHTML, 10);
+          return number;
+        }
+        incBtn.onclick = function () {
+          num.innerHTML = numZero() + 1;
+        };
+        decBtn.onclick = function () {
+          num.innerHTML = numZero() - 1;
+        };
+        resBtn.onclick = function () {
+          num.innerHTML = 0;
+          bodyTag.style.backgroundColor = "tomato";
+        };
+
+        console.log(bodyTag);
+        var yellow = document.getElementById("yellow");
+        var blue = document.getElementById("blue");
+        var pink = document.getElementById("pink");
+
+        yellow.onclick = function () {
+          bodyTag.style.backgroundColor = "gold";
+          yellow.style.display = "none";
+          blue.style.display = "block";
+          pink.style.display = "block";
+        };
+        blue.onclick = function () {
+          bodyTag.style.backgroundColor = "royalblue";
+          yellow.style.display = "block";
+          blue.style.display = "none";
+          pink.style.display = "block";
+        };
+        pink.onclick = function () {
+          bodyTag.style.backgroundColor = "thistle";
+          yellow.style.display = "block";
+          blue.style.display = "block";
+          pink.style.display = "none";
+        };
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h2 id="num">0</h2>
+    <button id="incBtn">+1</button>
+    <button id="resBtn">0</button>
+    <button id="decBtn">+1</button>
+    <button id="yellow">yellow</button>
+    <button id="blue">blue</button>
+    <button id="pink">pink</button>
+  </body>
+</html>
