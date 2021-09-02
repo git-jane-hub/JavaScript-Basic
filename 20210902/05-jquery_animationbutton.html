@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #box2 {
+        width: 50px;
+        height: 50px;
+        background-color: gold;
+        position: relative;
+      }
+      #box1 {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        display: flex;
+        position: relative;
+        top: 230px;
+        left: 160px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      /*
+          rightBtn
+      */
+      $(() => {
+        $("#rightBtn").click(function () {
+          $("#box2").animate(
+            {
+              // 거리정보에 연산도 입력 가능(연산해서 기존 값에 대입하는 방식 )
+              left: "+=10px",
+            },
+            500
+          );
+        });
+        $("#leftBtn").click(function () {
+          $("#box2").animate(
+            {
+              left: "-=10px",
+            },
+            500
+          );
+        });
+        $("#topBtn").click(function () {
+          $("#box2").animate(
+            {
+              top: "-=10px",
+            },
+            500
+          );
+        });
+        $("#downBtn").click(function () {
+          $("#box2").animate(
+            {
+              top: "+=10px",
+            },
+            500
+          );
+        });
+        // 대각선
+        $("#trBtn").click(function () {
+          $("#box2").animate({
+            top: "-=10px",
+            left: "+=10px",
+          });
+        });
+        $("#tlBtn").click(function () {
+          $("#box2").animate({
+            top: "-=10px",
+            left: "-=10px",
+          });
+        });
+        $("#drBtn").click(function () {
+          $("#box2").animate({
+            top: "+=10px",
+            left: "+=10px",
+          });
+        });
+        $("#dlBtn").click(function () {
+          $("#box2").animate({
+            top: "+=10px",
+            left: "-=10px",
+          });
+        });
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <p>
+      <button id="leftBtn">left</button>
+      <button id="rightBtn">right</button>
+      <button id="topBtn">top</button>
+      <button id="downBtn">down</button><br />
+      <button id="trBtn">topRight</button>
+      <button id="tlBtn">topLeftt</button>
+      <button id="drBtn">downRight</button>
+      <button id="dlBtn">downLeft</button>
+    </p>
+    <div id="box2">box2</div>
+    <div id="box1"></div>
+  </body>
+</html>

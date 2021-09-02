@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /*
+            스프레드(전개 - 펼쳐서 확인) 문법은 js내부의 리스트 자료형을 펼쳐서 사용할 때 유용
+            for 문에 인덱스를 넣어 하나씩 나열할 수 있는 자료는 스프레드 문법 사용 가능
+            ...리스트자료
+        */
+      let numList = [1, 2, 3];
+      console.log(numList);
+      console.log(...numList);
+
+      // 문자열도 스프레드 문법 적용 가능
+      let name = "javaScript";
+      console.log(...name);
+
+      // 스프레드 문법의 결과는 변수에 저장할 수 없음
+      // const newList = ...numList;   // error
+
+      // 특정 리스트에 값을 추가로 저장할 때 스프레드 문법을 사용
+      let newNumList = [...numList, 4]; // [1, 2, 3]에 4 추가
+      // JavaScript에는 배열 내부에 서로 다른 자료형을 저장할 수 있기 때문에 아래와 같이 리스트에 5 를 추가하면 리스트 내부에는 array와 5가 나열되어 저장됨
+      newNumList = [numList, 5];
+      console.log(newNumList);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

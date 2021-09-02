@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      .menu-detail {
+        display: none;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $(".menu").css({
+          background: "lightgrey",
+          padding: "15px",
+          width: "200px",
+        });
+        $(".menu").hover(
+          function () {
+            $(".menu-detail").css("display", "block");
+          },
+          function () {
+            $(".menu-detail").css("display", "none");
+          }
+        );
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div class="menu">
+      <h3>MENU</h3>
+      <ul class="menu-detail">
+        <li>김밥: 3000원</li>
+        <li>라면: 5000원</li>
+        <li>우동: 5000원</li>
+        <li>오므라이스: 7000원</li>
+        <li>돈까스: 8000원</li>
+      </ul>
+    </div>
+  </body>
+</html>

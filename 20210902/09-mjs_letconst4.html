@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /*
+        변수 호이스팅: 변수 선언문이 위치와 상관없이 가장 먼저 계산되는 현상
+        var로 선언된 변수는 순서가 바뀌어도 작동하는데
+        이로 인해 프로그램의 논리적 흐름을 방해함 
+    */
+      // 가장 마지막에 변수를 선언하고 해당 변수를 가장 처음 출력해도 동작함
+      console.log(foo);
+      foo = 123;
+      console.log(foo);
+      // 가장 마지막에 위치한 변수 선언이 우선순위에 따라 가장 먼저 실행됨
+      var foo;
+
+      console.log(goo);
+      goo = 123;
+      console.log(goo);
+      let goo;
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

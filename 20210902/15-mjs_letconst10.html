@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /*
+     상수를 사용하는 이유: 반복해서 참조하는 변수나 코드 가독성을 높이기 위함 
+    */
+      // 세전
+      let preTaxPrice = 100;
+      // 세후(10%의 세금 적용) - 0.1의 의미를 상수로 지정, 0.1은 변동되지 않는 숫자이고 의미를 파악하기에도 좋음
+      // let afterTaxPrice = preTaxPrice + (preTaxPrice * 0.1);
+      // 상수는 대문자로, 단어사이는 언더바(_)로 작성
+      const TAX_RATE = 0.1;
+      let afterTaxPrice = preTaxPrice + preTaxPrice * TAX_RATE;
+      console.log(afterTaxPrice);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

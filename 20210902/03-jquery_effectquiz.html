@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      .menu {
+        background-color: thistle;
+        width: 200px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(() => {
+        /*
+        $(".btnShow").click(function () {
+          $(this).hide("fast");
+          $(".btnHide").show("fast");
+          $(".menuDetail").show("fast");
+        });
+        $(".btnHide").click(function () {
+          $(this).hide("fast");
+          $(".btnShow").show("fast");
+          $(".menuDetail").hide("fast");
+        });
+        */
+
+        $(".btnShow").click(function () {
+          // 메뉴 노출여부
+          $(".menuDetail").toggle("fast");
+          // 버튼 문구 변경
+          /*
+          if ($(".btnShow")[0].innerHTML === "MENUHIDE") {
+            $(".btnShow")[0].innerHTML = "MENUSHOW";
+          } else if ($(".btnShow").text === "MENUSHOW") {
+            $(".btnShow").text = "MENUHIDE";
+          }
+            */
+          if ($(this).text() === "MENUSHOW") {
+            $(this).text("MENUHIDE");
+          } else if ($(this)[0].innerText === "MENUHIDE") {
+            $(this)[0].innerText = "MENUSHOW";
+          }
+        });
+
+        /* 디버깅을 통해 innerHTML 적용을 위한 대상 찾기
+        $()를 통해 가져오는 데이터는 []안의 array이기 때문에 인덱싱을 통해 정확한 대상을 지정해줌 */
+        console.log($(".btnShow")); // array(0번 인덱스에 button이 있음)
+        console.log(typeof $(".btnShow")); // 자료형 확인
+        console.log($(".btnShow")[0]); // button
+        // text() 괄호 내부에 아무것도 작성하지 않으면 대상 내부의 있는 text를 반환
+        console.log($(".btnShow").text());
+        console.log($(".btnShow")[0].innerHTML);
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div class="menu">
+      <button class="btnShow">MENUSHOW</button>
+      <ul class="menuDetail">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+      </ul>
+      <!--
+      <button class="btnShow">Menu Show</button>
+      <button class="btnHide">Menu Hide</button>
+      <ul class="menuDetail">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+      </ul>
+      -->
+    </div>
+  </body>
+</html>

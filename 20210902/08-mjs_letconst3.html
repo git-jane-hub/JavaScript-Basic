@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /*
+        변수 선언시 var를 사용하면 for문 내부에서 선언한 변수도 전역변수로 인식됨 
+    */
+      var x = 10;
+      for (var x = 0; x < 5; x++) {
+        console.log(x);
+      }
+      console.log(x);
+      console.log("---");
+
+      let y = 10;
+      for (let y = 0; y < 5; y++) {
+        console.log(y);
+      }
+      console.log(y);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

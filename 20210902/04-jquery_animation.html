@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        position: relative;
+        opacity: 0.2;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      /*
+          선캑요소를 움직이거나 크기를 변경하기 위해 애니메이션 사용
+          요소의 위치를 실시간으로 변경하거나 움직이는 작업 가능
+      */
+      $(() => {
+        /* animation 구현:
+         방향(top, left, bottom, right)
+         크기(width. height)
+         위치(position) 에 대한 옵션 필요
+         경우에 따라 투명도 (opacity) 조정
+         */
+        $("#box1")
+          .animate(
+            {
+              // 왼쪽부터 -만큼 이동
+              left: "500px",
+              // 너비는 -만큼 증가
+              width: "200px",
+              // 높이는 -만큼 증가
+              height: "200px",
+              opacity: 1,
+            },
+            // 시간(밀리초)만큼 소요
+            2000
+          )
+          .animate(
+            {
+              left: "0",
+              width: "100px",
+              height: "100px",
+              opacity: 0.2,
+            },
+            2000
+          );
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="box1">Box1</div>
+  </body>
+</html>

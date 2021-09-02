@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+      }
+      body {
+        font: 12px/1.5 굴림, "Gulim";
+        margin: 10px;
+      }
+      h2 {
+        margin-top: 20px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      /* 이벤트는(event) 통해 특정한 조건이 만족하면 단순한 조작이 가능
+        효과(effect)는 이벤트 실행 시 화면구성을 동적으로 만듦 
+        종류
+            $("선택자").hide() - 선택 요소 숨기기
+            $("선택자").show() - 선택 요소 보이기
+            $("선택자").toggle() - 보이면 숨기고, 안보이면 노출
+            $("선택자").slideUp() - 말아올리듯 숨기기
+            $("선택자").slideDown() - 말아내려오듯 노출
+            $("선택자").slideToggle() - slide 형태로 toggle 적용
+            $("선택자").fadeOut() - 서서히 사라짐
+            $("선택자").fadeIn() - 서서히 보임
+            $("선택자").fadeTo() - 요소를 원하는만큼 투명도 조절
+    */
+      $(() => {
+        $("#btn1").click(function () {
+          // hide() 숨기기
+          $(".box1").hide("slow");
+        });
+        $("#btn2").click(function () {
+          // show() 나타내기
+          $(".box1").show(1000); // 1초
+        });
+
+        $("#btn3").click(function () {
+          // toggle() 보이면 안보이도록, 안보이면 보이도록(show 와 hide를 한번의 명령어로 실행)
+          $(".box2").toggle(1000);
+        });
+
+        // arrow function을 사용할 때에는 this 키워드를 사용할 수 없음
+        $("#btn4").click(function () {
+          // sllidUp() 말아올라감
+          // this(자기자신의).parent(부모의).next(형제)
+          $(this).parent().next().slideUp(500);
+        });
+
+        $("#btn5").click(function () {
+          // slideDown() 말려내려옴
+          $(this).parent().next().slideDown(500);
+        });
+        $("#btn6").click(function () {
+          // slideToggle() 말아올라갔다가 말려내려오는 것을 반복
+          $(this).parent().next().slideToggle("fast");
+        });
+
+        $("#btn7").click(function () {
+          // fadeOut() 사라짐
+          $(this).parent().next().fadeOut(1000);
+        });
+        $("#btn8").click(function () {
+          // fadeIn() 나타남
+          $(this).parent().next().fadeIn("normal");
+        });
+        $("#btn9").click(function () {
+          $(this).parent().next().fadeToggle("slow");
+        });
+
+        $("#btn10").click(function () {
+          // fadeTo(속도, 투명도) 0.3 - 70% 만큼 흐려짐, 0 - 아예 사라짐, 1 - 투명도 0%(숫자가 작을 수록 흐려짐)
+          $("#box3").css("font-weight", "900").fadeTo("slow", 0.3);
+        });
+        $("#btn11").click(function () {
+          $("#box3").css("font-weight", "900").fadeTo(3000, 1);
+        });
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>jQuery Effect</h1>
+      <p>
+        제이쿼리에서는 화면전환 슬라이드 업다운<br />
+        등의 다양한 효과 메서드 제공
+      </p>
+      <h2>show/hide Effect</h2>
+      <p>
+        <button id="btn1">hide</button>
+        <button id="btn2">show</button>
+      </p>
+      <p class="box1">
+        show 와 hide는 선택요소를 노출시키거나 숨길 때 사용<br />
+        show(시간)/hide(시간)<br />
+        시간은 fast, normal, slow 등으로 입력하거나<br />
+        혹은 밀리초(1/1000초)단위의 숫자로 입력하면 그 시간에 걸쳐 작동
+      </p>
+      <h2>toggle Effect</h2>
+      <p><button id="btn3">toggle</button></p>
+      <p class="box2">
+        toggle은 선택요소가 숨겨져있다면, 보이도록<br />보인다면 숨기도록 만듦
+      </p>
+      <h2>slideDown/Up Effect</h2>
+      <p>
+        <button id="btn4">slideUp</button>
+        <button id="btn5">slideDown</button>
+        <button id="btn6">slideToggle</button>
+      </p>
+      <p class="box3">
+        slideUp은 선택요소를 위로 말아올리며 숨기고<br />
+        slideDown은 선택요소를 아래로 말아내려서 노출
+      </p>
+      <h2>fadeIn/fadeOut Effect</h2>
+      <p>
+        <button id="btn7">fadeOut</button>
+        <button id="btn8">fadeIn</button>
+        <button id="btn9">fadeToggle</button>
+      </p>
+      <p>
+        fadeOut은 선택요소를 천천히 사라지게 함<br />
+        fadeIn은 선택요소를 천천히 노출되게 함
+      </p>
+      <h2>fadeTo Effect</h2>
+      <p>
+        <button id="btn10">fadeTo(0.3)</button>
+        <button id="btn11">fadeTo(1)</button>
+      </p>
+      <p id="box3">
+        fadeTo는 선택요소를 원하는 만큼만<br />
+        보이거나 숨길 수 있음
+      </p>
+    </div>
+  </body>
+</html>

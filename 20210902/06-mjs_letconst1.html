@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /*
+        ES5(레거시 자바스크립트)의 변수 선언은 var 를 사용
+        var 는 변수 중복 선언 허용 및 함수 레벨 스코프 중복처리 기능, 변수 호이스팅 등의 문제를 야기함 
+    */
+      // 1. 변수 중복 허용 - 재선언(중복 선언) 가능
+      var x = 1;
+      var y = 1;
+
+      var x = 100;
+      // 초기화하지 않으면 중복 선언은 작동하지 않음 - 재선언을 했지만 undefined가 반환되지 않고 1이 반환됨
+      var y;
+      console.log(x);
+      console.log(y);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

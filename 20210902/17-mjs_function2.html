@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /*
+     화살표 함수, arrow function은 function 키워드 대신 화살표 => 를 사용(이름을 부여할 수 없고 변수에 넣어서 사용, 익명함수 선언시 사용 가능)
+     기존의 함수 정의 방식보다 간략하게 함수를 정의하며 내부 동작도 기존 함수보다 간략
+     - this 등의 키워드를 배제함 
+    */
+      // MULTIPLY 에 x, y 두개를 받아 곱해서 반환하는 함수 저장 - 바로 리턴문이 오는 경우, 중괄호와 리턴문을 작성할 필요 없음
+      const MULTIPLY = (x, y) => x * y;
+
+      let result = MULTIPLY(2, 3);
+      console.log(result);
+
+      /* 선언 문법
+       1. 파라미터가 여러개인 경우에는 소괄호 내부에 나열하고 화살표 중괄호 여닫고 실행문 작성
+       (파라미터1, 파라미터2, ...) => {실행구문};
+
+       2. 매개변수가 있다면 소괄호 생략 가능
+       파라미터1, 파라미터2, ...  => {실행구문};
+       */
+      const plus = (x, y) => {
+        return x + y;
+      };
+      result = plus(1, 2);
+      console.log(result);
+
+      const minus = (x) => {
+        return x - 10;
+      };
+      result = minus(20);
+      console.log(result);
+
+      /* 
+        3. 매개변수가 없다면 소괄호 생략 뷸가능
+        () => {실행구문};
+        */
+      const hello = () => {
+        return "hello";
+      };
+      result = hello();
+      console.log(result);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

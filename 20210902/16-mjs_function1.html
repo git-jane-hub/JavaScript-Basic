@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /*
+         ES6이전에는 일반 함수, 생성자 함수, 메서드 등 여러가지 형태로 사용하던 함수는 작성의 실수와 메모리 낭비등의 문제가 발생됨 
+        자바스스크립트에서의 함수는 일급객체로 분류함 
+        변수에 저장될 수 있는 요소를 지칭하는 것으로 아래와 같이 함수를 변수 foo에 저장해서 사용가능 
+    */
+      var foo = function () {
+        return 1;
+      };
+      // 변수 foo에는 함수가 저장되어 있음
+      console.log(foo);
+
+      // 일반적인 함수의 호출은 변수명(); - 익명함수의 호출은 불가능
+      foo();
+
+      // 생성자 함수로서 호출
+      new foo(); //=> foo{}
+
+      // 메서드로서 호출
+      var obj = { abc: foo }; //{변수 obj내부에서 부를 명칭: 실행할 요소} - 좌측의 명칭을 사용해서 foo 가 호출됨
+      obj.abc();
+      console.log(obj);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>
