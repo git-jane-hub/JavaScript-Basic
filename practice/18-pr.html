@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $("#wrap").html("<h1>First Title</h1>");
+        $("h1").attr("class", "title1");
+        $("#wrap").append("<button>button1</button>");
+        $("button").attr("class", "btn1");
+        $("#wrap").append($(".btn1").clone(true));
+        $(".btn1:last").attr("class", "btn2");
+        $(".btn2").text("button2");
+        $("#wrap").append("<ul></ul>");
+        for (var num = 1; num < 4; num++) {
+          $("ul").append("<li>list_" + num + "</li>");
+        }
+        $("li").eq(1).attr("class", "list1");
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--x
+      <h1 class="title1">First Title</h1>
+      <button class="btn1">button1</button>
+      <button class="btn2">button2</button>
+      <ul>
+        <li>list_1</li>
+        <li class="list1">list_2</li>
+        <li>list_3</li>
+      </ul>
+      <h1 class="title2">Second Title</h1>
+      <p>paragraph</p>
+      <span>span</span>
+        -->
+    </div>
+  </body>
+</html>
