@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* JavaScript는 객체가 완전히 똑같이 사용해야하는 메서드에 대해서는 공용공간을 지정할 수 있도록 프로토타입을 제공함
+        프로토타입 공간에 메서드를 저장해두면 new 키워드로 생성한 객체들은 모두 프로토타입을 공유해 메서드를 호출하고 메모리 공간을 절약할 수 있음 */
+
+      // 객체가 개별적으로 가져야하는 멤버변수만 선언하고 클래스정의
+      function Person(name) {
+        this.name = name;
+      }
+
+      /* 클래스명.prototype은 모든 객체가 공유하는 공용공간으로 사용 - 공용공간에 메서드를 직접 저장 - 파이썬 튜터(https://pythontutor.com/)의 메모리 구조 참고 */
+      Person.prototype.getName = function () {
+        return this.name;
+      };
+
+      Person.prototype.setName = function (name) {
+        this.name = name;
+      };
+
+      var me = new Person("jaein");
+      console.log(me.getName());
+      me.setName("jane");
+      console.log(me.getName());
+
+      var man = new Person("t");
+      console.log(man.getName());
+      man.setName("tom");
+      console.log(man.getName());
+
+      var woman = new Person("s");
+      console.log(woman.getName());
+      woman.setName("sally");
+      console.log(woman.getName());
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

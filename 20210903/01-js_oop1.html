@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* JavaScript의 객체지향 프로그래밍은 Java와 유사하지만
+    명시적인 키워드가 부족하고 실행형식도 자바스크립트에서만 쓰는 일부 개념이 있어 예외적인 상황이 발생함 */
+
+      // ES5 - 함수를 만들어 클래스처럼 활용, 함수 내부에 this키워드를 사용해 변수를 만들고 함수를 대입하면 클래스처럼 활용 가능
+      // 자바스크립트에서의 함수는 변수에 대입할 수 있는 일급객체로 취급
+      function Person(name) {
+        this.name = name;
+
+        // ES5까지에서 Javascript에는 접근제한자가 없음
+        /* 함수를 getName이라는 변수에 대입(할당)하는 방식, 
+            new 키워드로 객체를 생성해서 호출시마다 함수를 생성하게되는 문제점이 있음 - 서로 다른 주소에 데이터를 저장하므로 메모리 낭비 -> 02-js_oop2.html 
+            (메서드는 변수별로 동일해야함 - 메서드는 동일, 각 데이터에 따라 결과값이 달라지는 것) */
+        this.getName = function () {
+          return this.name;
+        };
+
+        this.setName = function (name) {
+          this.name = name;
+        };
+      }
+
+      // new 키워드를 이용해서 객체 생성
+      var me = new Person("jaein"); // 이름을 정의
+      console.log(me.getName());
+      me.setName("jane"); // 이름을 변경
+      console.log(me.getName());
+      console.log(me);
+
+      var man = new Person("tom");
+      console.log(man.getName());
+      man.setName("tommy");
+      console.log(man.getName());
+
+      var woman = new Person("sammy");
+      console.log(woman);
+      console.log(woman.getName());
+      woman.setName("sammmmmy");
+      console.log(woman.getName());
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

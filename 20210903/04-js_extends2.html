@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      // 부모 - Person
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // Person의 setter와 getter
+      // 작성 주의, 상속을 할 부모 객체도 클래스명.prototype.메서드명 = function(){};
+      Person.prototype.setName = function (name) {
+        this.name = name;
+      };
+      Person.prototype.getName = function () {
+        return this.name;
+      };
+
+      Person.prototype.setAge = function (age) {
+        this.age = age;
+      };
+      Person.prototype.getAge = function () {
+        return this.age;
+      };
+
+      // Person을 상속받을 Student
+      function Student(name, age, grade) {
+        this.grade = grade;
+      }
+
+      // 상속
+      var add1 = new Person("name", "age");
+      Student.prototype = add1;
+
+      Student.prototype.setGrade = function (grade) {
+        this.grade = grade;
+      };
+      Student.prototype.getGrade = function () {
+        return this.grade;
+      };
+
+      // Person을 상속받을 Worker
+      function Worker(name, age, job) {
+        this.job = job;
+      }
+
+      // 상속
+      var add2 = new Person("name", "age");
+      Worker.prototype = add2;
+
+      Worker.prototype.setJob = function (job) {
+        this.job = job;
+      };
+      Worker.prototype.getJob = function () {
+        return this.job;
+      };
+
+      var per = new Person("jane", 28);
+      var stu = new Student("jaein", 20, 1);
+      var sal = new Worker("choi", 30, "developer");
+
+      console.log(per.getName());
+      console.log(per.getAge());
+      console.log(stu.getGrade());
+      console.log(sal.getJob());
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      /* JavaScript 의 상속은 프로토타입을 활용(전통적)하는 것과 클래스 기반의 상속 두가지가 있음
+        키워드 기반이 아닌 프로토타입을 생성하고 프로토타입을 받아온 다음, 필요한 추가적인 사항을 덧붙여 만듦
+       */
+      // 부모 클래스 생성
+      function Person(name) {
+        this.name = name;
+      }
+
+      Person.prototype.setName = function (name) {
+        this.name = name;
+      };
+
+      Person.prototype.getName = function () {
+        return this.name;
+      };
+
+      // Person(부모)을 상속한 Student를 생성(major라는 멤버변수 추가)
+      function Student(name, major) {
+        this.major = major;
+      }
+
+      // Student의 프로토타입에 Person(부모) 객체를 넣어 상속 - 이문장으로 상속이 가능하게됨
+      var you = new Person("김자바");
+      Student.prototype = you; // 기존 부모 객체에서 멤버변수를 추가하려면, 해당 문장을 먼저 작성하고 이후에 멤버변수에 대한 getter와 setter를 추가해야함, 그렇지 않으면 이미 추가한 멤버변수가 없어지고 상속받는 Person 객체의 멤버변수로 변경되게됨
+
+      // 추가한 멤버변수의 getter, setter 작성 - 상속 이후에 추가할 메서드 작성, 상속시 프로토타입이 reset되기 때문
+      Student.prototype.setMajor = function (major) {
+        this.major = major;
+      };
+
+      Student.prototype.getMajor = function () {
+        return this.major;
+      };
+
+      var man = new Student("박자바", "컴터공학");
+      man.setName("최자바");
+      console.log(man.getName());
+      console.log(man.getMajor()); // 상속을 진행하고 이후에 멤버변수를 추가해야 추가한 멤버변수에 데이터를 삽입할 수 있음
+      man.setMajor("컴퓨터공학");
+      console.log(you);
+      console.log(man);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>
