@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      function Person(name) {
+        this.name = name;
+      }
+
+      Person.prototype.setName = function (name) {
+        this.name = name;
+      };
+
+      Person.prototype.getName = function () {
+        return this.name;
+      };
+
+      function Student(name, major) {
+        this.major = major;
+      }
+
+      var me = new Person("jane");
+      Student.prototype = me;
+
+      Student.prototype.setMajor = function (major) {
+        this.major = major;
+      };
+
+      Student.prototype.getMajor = function () {
+        return this.major;
+      };
+
+      var man = new Student("tom", "computer engineering");
+      console.log(man);
+
+      console.log(man.getName());
+      man.setName("tommy");
+      man.setMajor("EECS");
+      console.log(man);
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+</html>

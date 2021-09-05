@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      .menu {
+        background-color: lightgrey;
+        width: 200px;
+      }
+      .menu-detail {
+        display: none;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $(".menu-title").hover(
+          function () {
+            $(".menu-detail").css("display", "block");
+          },
+          function () {
+            $(".menu-detail").css("display", "none");
+          }
+        );
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div class="menu">
+      <h3 class="menu-title">MENU</h3>
+      <ul class="menu-detail">
+        <li>menu_1</li>
+        <li>menu_2</li>
+        <li>menu_3</li>
+        <li>menu_4</li>
+        <li>menu_5</li>
+      </ul>
+    </div>
+  </body>
+</html>

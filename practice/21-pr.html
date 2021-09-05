@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      .moveBox {
+        width: 50px;
+        height: 50px;
+        background-color: thistle;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $(".moveR").click(function () {
+          $(".moveBox").animate(
+            {
+              left: "+=100px",
+            },
+            5000
+          );
+        });
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <button class="moveR">right</button>
+    <button class="moveL">left</button>
+    <button class="moveU">up</button>
+    <button class="moveD">down</button>
+    <div class="moveBox">box</div>
+  </body>
+</html>

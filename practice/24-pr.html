@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script>
+      window.onload = function () {
+        const contents = document.getElementById("contents");
+        const title = document.getElementsByClassName("title")[0];
+        const spanTag = document.getElementsByTagName("span")[1];
+        const nameId = document.getElementsByName("id")[0];
+        const allDetail = document.querySelectorAll("#contents .detail")[2];
+        console.log(contents);
+        console.log(title);
+        console.log(spanTag);
+        console.log(nameId);
+        console.log(allDetail);
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="contents">
+      <h1 class="title">This is title</h1>
+      <div class="detail">
+        <span>detail 1</span>
+      </div>
+      <div class="detail">
+        <span>detail 2</span>
+      </div>
+      <div class="detail">
+        <span>detail 3</span>
+      </div>
+      <input type="text" name="id" />
+      <input type="password" name="pw" />
+    </div>
+  </body>
+</html>

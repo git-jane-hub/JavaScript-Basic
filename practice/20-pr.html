@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $(".btn").click(function () {
+          $(".menu-list").fadeToggle(3000);
+          if ($(".btn").text() === "menu 보기") {
+            $(".btn").text("menu 숨기기");
+          } else {
+            $(".btn").text("menu 보기");
+          }
+        });
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div class="menu">
+      <button class="btn">menu 보기</button>
+      <ul class="menu-list">
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+      </ul>
+    </div>
+  </body>
+</html>
